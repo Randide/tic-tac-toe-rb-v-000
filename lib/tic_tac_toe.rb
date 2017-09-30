@@ -101,3 +101,15 @@ def winner(board)
     board[combo_win.first]
   end
 end
+
+def play(board)
+  counter = 0
+  loop do
+    counter += 1
+    turn(board)
+    if counter == 9
+      puts "Congratulations!"
+      break
+    end
+  end
+end
