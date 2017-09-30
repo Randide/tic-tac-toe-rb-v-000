@@ -23,7 +23,7 @@ def input_to_index(letsgo)
 end
 
 def move(board, position, character="X")
-  board[position]=character
+  board[position] = character
 end
 
 def position_taken?(board, index)
