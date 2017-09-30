@@ -103,13 +103,13 @@ def winner(board)
 end
 
 def play(board)
-  counter = 0
-  loop do
-    counter += 1
+  until over?(board)
+    current_player(board)
     turn(board)
-    if counter == 9
-      puts "Congratulations!"
-      break
-    end
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}! You're not a loser!"
+  else
+    puts "Congrats, you both lose!"
   end
 end
