@@ -22,8 +22,8 @@ def input_to_index(letsgo)
   letsgo.to_i - 1
 end
 
-def move(board, index, token)
-  board[index] = token
+def move(board, go, token)
+  board[go] = token
 end
 
 def position_taken?(board, index)
