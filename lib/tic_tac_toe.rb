@@ -57,3 +57,47 @@ def turn(board)
     turn(board)
   end
 end
+
+def turn_count(board)
+  rounds = 0
+  board.each do |playermark|
+    if playermark == "X" || playermark == "O"
+      rounds += 1
+    end
+  end
+  rounds
+end
+
+def current_player(board)
+  if turn_count(board) % 2 == 0
+    "X"
+  else
+    "O"
+  end
+end
+
+def won?(board)
+  WIN_COMBINATIONS.find do |win|
+    board[win[0]] == board[win[1]] &&
+    board[win[1]] == board[win[2]] &&
+    position_taken?(board, win[0])
+  end
+end
+
+def full?(board)
+  board.all?{|playmark| playmark == "X" || playmark == "O"}
+end
+
+def draw?(board)
+  !won?(board) && full?(board)
+end
+
+def over?(board)
+  won?(board) || draw?(board) || full?(board)
+end
+
+def winner(board)
+  if combo_win = won?(board)
+    board[combo_win.first]
+  end
+end
