@@ -22,7 +22,7 @@ def input_to_index(letsgo)
   letsgo.to_i - 1
 end
 
-def move(board, position, character="X")
+def move(board, 0, character="X")
   board[position]=character
 end
 
