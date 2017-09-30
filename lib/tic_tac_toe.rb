@@ -21,6 +21,15 @@ end
 def input_to_index(letsgo)
   letsgo.to_i - 1
 end
+
 def move(board, position, character="X")
   board[position]=character
+end
+
+def position_taken?(board, index)
+  if board[index] == "" || board[index] == " " || board[index] == nil
+    return false
+  else
+    return true
+  end
 end
